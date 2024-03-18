@@ -2,33 +2,46 @@
 <html>
   <head>
     <title>UserSys</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
     {% load bootstrap5 %}
     {% bootstrap_css %}
   </head>
 
   <body>
-    <div class="container">
-      {% if messages %}
-        {% for message in messages %}
-          <div class="alert alert-{{ message.type }} text-center fw-bold">
-              <p>{{ message.text }}</p>
-          </div>
-        {% endfor %}
-      {% endif %}
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.type }} text-center fw-bold">
+                <p>{{ message.text }}</p>
+            </div>
+          {% endfor %}
+        {% endif %}
 
-      <ul class="nav bg-secondary">
-        <li class="nav-item">
-          <a class="nav-link link-light" href="/">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link link-light" href="/user/users">USERS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link link-light" href="/contact/contacts">CONTACTS</a>
-        </li>
-      </ul>
+        <ul class="nav bg-secondary">
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/user/users">USERS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/contact/contacts">CONTACTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/signout">SIGNOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/signin">SIGNIN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/signup">SIGNUP</a>
+          </li>
+        </ul>
 
-      {% block content %} {% endblock %} {% bootstrap_javascript %}
+        {% block content %} {% endblock %}
+        {% bootstrap_javascript %}
+      </div>
     </div>
   </body>
 </html>
