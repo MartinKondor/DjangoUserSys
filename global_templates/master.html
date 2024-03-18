@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UserSys</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+  </head>
+
+  <body>
+    <div class="container">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.type }} text-center fw-bold">
+              <p>{{ message.text }}</p>
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      <ul class="nav bg-secondary">
+        <li class="nav-item">
+          <a class="nav-link link-light" href="/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-light" href="/user/users">USERS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-light" href="/contact/contacts">CONTACTS</a>
+        </li>
+      </ul>
+
+      {% block content %} {% endblock %} {% bootstrap_javascript %}
+    </div>
+  </body>
+</html>

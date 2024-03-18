@@ -9,6 +9,7 @@ A simple **Python / Django** project for managing Users on a **Postgres** databa
 ## How to run
 
 ```cmd
+$ py -m pip install -r requirements.txt
 $ py manage.py runserver 127.0.0.1:8080
 ```
 
@@ -20,6 +21,10 @@ Username: admin
 Password: admin
 Email: admin@example.com
 ```
+
+## Apps used
+* `bootstrap5`
+* `crispy_forms`
 
 ## Sitemap
 

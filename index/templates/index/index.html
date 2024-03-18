@@ -1,0 +1,31 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<h2 class="mt-2">Sitemap</h2>
+<ul>
+    <li>
+        <a href="http://localhost:8080/">Show the sitemap links</a>
+    </li>
+    <li>
+        <a href="http://localhost:8080/signup">Sign Up a new user</a>
+    </li>
+    <li>
+        <a href="http://localhost:8080/signin">Sign In with a registered user</a>
+    </li>
+    <li>
+        <a href="http://localhost:8080/signout">Sign Out if authenticated</a>
+    </li>
+    <li>
+        <a href="http://localhost:8080/user/users">Lists out every user and a link to their contacts (table view with search func.)</a>
+    </li>
+    <li>
+        <a href="http://localhost:8080/user?id=x">A user and its all data including its contact</a>
+    </li>
+    <li>
+        <a href="http://localhost:8080/contact/contacts">Lists out every contacts and a link to their users (table view with search func.)</a>
+    </li>
+    <li>
+        <a href="http://localhost:8080/contact?id=x">Redirect to the contacts corresponding user: /users?id=y</a>
+    </li>
+</ul>
+{% endblock %}
