@@ -20,26 +20,47 @@
 
         <ul class="nav bg-secondary">
           <li class="nav-item">
-            <a class="nav-link link-light" href="/">HOME</a>
+            <a class="nav-link link-light" href="/">
+              <i class="fa-solid fa-house"></i>
+              HOME
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" href="/user/users">USERS</a>
+            <a class="nav-link link-light" href="/user/users">
+              <i class="fa-solid fa-users"></i>
+              USERS
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" href="/contact/contacts">CONTACTS</a>
+            <a class="nav-link link-light" href="/contact/contacts">
+              <i class="fa-solid fa-address-book"></i>
+              CONTACTS
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" href="/signout">SIGNOUT</a>
+            <a class="nav-link link-light" href="/signin">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              SIGN-IN
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" href="/signin">SIGNIN</a>
+            <a class="nav-link link-light" href="/signup">
+              <i class="fa-solid fa-user-plus"></i>
+              SIGN-UP
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" href="/signup">SIGNUP</a>
+            <a class="nav-link link-light" href="/signout">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              SIGN-OUT
+            </a>
           </li>
         </ul>
 
-        {% block content %} {% endblock %}
+        <div class="container mb-4">
+          {% block content %} {% endblock %}
+        </div>
+
         {% bootstrap_javascript %}
       </div>
     </div>

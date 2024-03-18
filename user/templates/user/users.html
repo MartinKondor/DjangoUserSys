@@ -1,0 +1,27 @@
+{% extends 'master.html' %}
+
+{% load getattribute %}
+
+{% block content %}
+<h2 class="mt-4 text-center fw-bold">Users</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      {% for field_name in user_fields %}
+        <th>{{ field_name }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+      <tr>
+        {% for field_name in user_fields %}
+          <td>{{ user|getattribute:field_name }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
