@@ -31,6 +31,13 @@ ALLOWED_HOSTS = [
     '.pythonanywhere.com'
 ]
 
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.Argon2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
+    "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
+    "django.contrib.auth.hashers.ScryptPasswordHasher",
+]
 
 # Application definition
 
@@ -64,6 +71,8 @@ ROOT_URLCONF = 'UserSys.urls'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+PASSWORD_SALT = "tHrOveRsIARSAdIPTenTrApeRSOlTive"
 
 TEMPLATES = [
     {

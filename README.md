@@ -25,6 +25,7 @@ Email: admin@example.com
 ## Apps used
 * `bootstrap5`
 * `crispy_forms`
+* `argon2`
 
 ## Sitemap
 

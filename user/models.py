@@ -4,6 +4,7 @@ from django.utils import timezone
 
 from index.forms import SignUpForm
 from contact.models import Contact
+from django.contrib.auth.hashers import make_password, check_password
 
 
 class User(models.Model):
@@ -14,6 +15,12 @@ class User(models.Model):
     contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
 
     @staticmethod
+    def check_password(*args, **kwargs):
+        # TODO: Not working
+        print(args, kwargs)
+        return check_password(*args, **kwargs)
+
+    @staticmethod
     def from_form(form: SignUpForm) -> models.Model:
         """
         Generate a User object form the signup form
@@ -22,8 +29,8 @@ class User(models.Model):
         for field in [f.name for f in User._meta.get_fields()]:
 
             if field == "password_hash":
-                # TODO: encode password
-                u.password_hash = form.data.get("password")
+                print(form.data.get("password"))
+                u.password_hash = make_password(form.data.get("password"), settings.PASSWORD_SALT)
                 continue
             
             value = form.data.get(field)
