@@ -38,24 +38,33 @@
               CONTACTS
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link link-light" href="/signin">
-              <i class="fa-solid fa-right-to-bracket"></i>
-              SIGN-IN
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link-light" href="/signup">
-              <i class="fa-solid fa-user-plus"></i>
-              SIGN-UP
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link-light" href="/signout">
-              <i class="fa-solid fa-right-from-bracket"></i>
-              SIGN-OUT
-            </a>
-          </li>
+          {% if current_user %}
+            <li class="nav-item">
+              <a class="nav-link link-light" href="/user/my_profile">
+                <i class="fa-solid fa-user"></i>
+                MY-PROFILE
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-light" href="/signout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                SIGN-OUT
+              </a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link link-light" href="/signin">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                SIGN-IN
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-light" href="/signup">
+                <i class="fa-solid fa-user-plus"></i>
+                SIGN-UP
+              </a>
+            </li>
+          {% endif %}
         </ul>
 
         <div class="container mb-4">

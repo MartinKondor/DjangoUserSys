@@ -2,12 +2,13 @@ from django.db import models
 from django.conf import settings
 from django.utils import timezone
 
+from UserSys.utils import JsonSerializable
 from index.forms import SignUpForm
 from contact.models import Contact
 from django.contrib.auth.hashers import make_password, check_password
 
 
-class User(models.Model):
+class User(models.Model, JsonSerializable):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     password_hash = models.TextField()
@@ -16,8 +17,6 @@ class User(models.Model):
 
     @staticmethod
     def check_password(*args, **kwargs):
-        # TODO: Not working
-        print(args, kwargs)
         return check_password(*args, **kwargs)
 
     @staticmethod

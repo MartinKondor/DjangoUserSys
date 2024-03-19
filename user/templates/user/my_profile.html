@@ -1,0 +1,34 @@
+{% extends 'master.html' %}
+
+{% load filter_tags %}
+
+{% block content %}
+<h2 class="mt-4 text-center fw-bold">
+    My Profile
+</h2>
+
+{% for field_name in user_fields %}
+
+    {% if field_name == "password_hash" %}
+    {% elif field_name == "contact" %}
+        <p>
+            <span class="fw-bold">{{ field_name|nice_str }}</span><span>:</span>
+            {% for contact_field_name in contact_fields %}
+                {% if contact_field_name != "user" %}
+                    <p>
+                        <span class="fw-bold">{{ contact_field_name|nice_str }}</span><span>:</span>
+                        <span>{{ user.contact|getattribute:contact_field_name }}</span>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </p>
+    {% else %}
+        <p>
+            <span class="fw-bold">{{ field_name|nice_str }}</span><span>:</span>
+            <span>{{ user|getattribute:field_name }}</span>
+        </p>
+    {% endif %}
+
+{% endfor %}
+
+{% endblock %}

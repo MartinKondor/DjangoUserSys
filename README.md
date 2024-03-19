@@ -1,8 +1,9 @@
 <p align="center">
-    <img src="docs/screenshot_1.png" width="100px">
-    <img src="docs/screenshot_2.png" width="100px">
-    <img src="docs/screenshot_3.png" width="100px">
-    <img src="docs/screenshot_4.png" width="100px">
+    <img src="docs/signin.png" width="375px">
+    <img src="docs/signup.png" width="375px">
+    <br/>
+    <img src="docs/users.png" width="375px">
+    <img src="docs/contacts.png" width="375px">
 </p>
 
 # UserSys

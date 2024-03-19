@@ -2,10 +2,11 @@ from django.db import models
 from django.conf import settings
 from django.utils import timezone
 
+from UserSys.utils import JsonSerializable
 from index.forms import SignUpForm
 
 
-class Contact(models.Model):
+class Contact(models.Model, JsonSerializable):
     phone = models.CharField(max_length=32)
     email = models.CharField(max_length=200, null=True)
     notes = models.TextField(null=True)
