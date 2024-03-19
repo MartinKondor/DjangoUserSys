@@ -1,6 +1,6 @@
 {% extends 'master.html' %}
 
-{% load getattribute %}
+{% load filter_tags %}
 
 {% block content %}
 <h2 class="mt-4 text-center fw-bold">Users</h2>
@@ -9,7 +9,13 @@
   <thead>
     <tr>
       {% for field_name in user_fields %}
-        <th>{{ field_name }}</th>
+
+          {% if field_name != "password_hash" %}
+
+            <th>{{ field_name }}</th>
+
+          {% endif %}
+
       {% endfor %}
     </tr>
   </thead>
@@ -17,7 +23,23 @@
     {% for user in users %}
       <tr>
         {% for field_name in user_fields %}
-          <td>{{ user|getattribute:field_name }}</td>
+
+          {% if field_name != "password_hash" %}
+
+            {% if field_name == "contact" %}
+              <td>
+                <a href="/contact/{{ user.contact.id }}" class="fw-bold">{{ user.contact.id }}</a>
+              </td>
+            {% elif field_name == "id" %}
+              <td>
+                <a href="/user/{{ user.id }}" class="fw-bold">{{ user.id }}</a>
+              </td>
+            {% else %}
+              <td>{{ user|getattribute:field_name }}</td>
+            {% endif %}
+
+          {% endif %}
+
         {% endfor %}
       </tr>
     {% endfor %}
