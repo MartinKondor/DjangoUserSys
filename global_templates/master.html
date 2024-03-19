@@ -2,11 +2,12 @@
 <html>
   <head>
     <title>UserSys</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'icon.png' %}">
     {% load bootstrap5 %}
     {% bootstrap_css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
   </head>
-
   <body>
     <div class="row justify-content-center">
       <div class="col-md-5">

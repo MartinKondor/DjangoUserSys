@@ -1,5 +1,8 @@
 <p align="center">
-    <img src="docs/screenshot.png" width=100>
+    <img src="docs/screenshot_1.png" width="100px">
+    <img src="docs/screenshot_2.png" width="100px">
+    <img src="docs/screenshot_3.png" width="100px">
+    <img src="docs/screenshot_4.png" width="100px">
 </p>
 
 # UserSys
@@ -22,6 +25,14 @@ Password: admin
 Email: admin@example.com
 ```
 
+## Practiced skills
+* General Django
+* Templating
+* Models
+* Generated forms
+* User authentication
+* Database with Django
+
 ## Apps used
 * `bootstrap5`
 * `crispy_forms`
@@ -35,5 +46,5 @@ Email: admin@example.com
 * `/signout` - Sign Out if authenticated
 * `/user/users` - Lists out every user and a link to their contacts (table view with search func.)
 * `/user?id=x` - A user and its all data including its contact
-* `/contact/contacts` - Lists out every contacts and a link to their users (table view with search func.)
-* `/contact?id=x` - Redirect to the contacts corresponding user: /users?id=y
+* `/contact/contacts` - Lists out every contact
+* `/contact?id=x` - Shows all info about the contact

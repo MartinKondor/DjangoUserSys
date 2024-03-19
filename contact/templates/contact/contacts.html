@@ -1,5 +1,35 @@
 {% extends 'master.html' %}
 
+{% load filter_tags %}
+
 {% block content %}
 <h2 class="mt-4 text-center fw-bold">Contacts</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      {% for field_name in contact_fields %}
+        <th>{{ field_name }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for contact in contacts %}
+      <tr>
+        {% for field_name in contact_fields %}
+            {% if field_name == "id" %}
+                <td>
+                    <a href="/contact/{{ contact.id }}" class="fw-bold">
+                        {{ contact.id }}
+                    </a>
+                </td>
+            {% else %}
+                <td>{{ contact|getattribute:field_name }}</td>
+            {% endif %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
 {% endblock %}
