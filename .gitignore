@@ -21,3 +21,4 @@ tests/report/
 .DS_Store
 .vscode/
 virtualenv/
+venv/

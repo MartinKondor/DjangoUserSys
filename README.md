@@ -10,11 +10,17 @@
 
 A simple **Python / Django** project for managing Users on a **Postgres** database.
 
+## Installation
+
+Use **Python>=3.11**:
+```commandline
+py -m pip install -r requirements.txt
+```
+
 ## How to run
 
 ```cmd
-$ py -m pip install -r requirements.txt
-$ py manage.py runserver 127.0.0.1:8080
+py manage.py runserver 127.0.0.1:8080
 ```
 
 ## Admin page
