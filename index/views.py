@@ -17,7 +17,7 @@ def index(request):
 
 
 def signup(request):
-    if request.session['current_user'] is not None:
+    if request.session.get('current_user') is not None:
         return redirect("/")
 
     if request.method == "POST":
@@ -59,7 +59,7 @@ def signup(request):
 
 
 def signin(request):
-    if request.session['current_user'] is not None:
+    if request.session.get('current_user') is not None:
         return redirect("/")
 
     error_msg = "Wrong email or password"
@@ -102,7 +102,7 @@ def signin(request):
 
 
 def signout(request):
-    if request.session['current_user'] is None:
+    if request.session.get('current_user') is None:
         return redirect("/")
 
     request.session["current_user"] = None
